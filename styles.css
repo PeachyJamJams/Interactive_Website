@@ -76,6 +76,7 @@ header p {
 .timeline-item.visible {
     transform: translateY(0);
     opacity: 1; /* Fade in */
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .timeline-item:nth-child(odd) {
@@ -99,10 +100,6 @@ header p {
     border-radius: 5px;
     margin-top: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.timeline-item.visible {
-    animation: fadeInUp 0.6s ease-out;
 }
 
 .more-info {
@@ -169,4 +166,21 @@ footer {
     color: #f8f8f2;
     font-size: 0.9rem;
     margin-top: 20px;
+}
+
+.timeline-item[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }

@@ -87,3 +87,19 @@ header {
 .team-member a:hover {
     text-decoration: underline;
 }
+
+.back-to-home {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.back-to-home:hover {
+    background: #0056b3;
+}

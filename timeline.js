@@ -1,26 +1,56 @@
 document.addEventListener("DOMContentLoaded", function() {
     const timelineItems = document.querySelectorAll('.timeline-item');
 
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
+    function getClosestItemInViewport() {
+        let closestItem = null;
+        let closestDistance = Infinity;
+
+        timelineItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const distance = Math.abs(rect.top - window.innerHeight / 2);
+
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestItem = item;
+            }
+        });
+
+        return closestItem;
     }
 
-    function checkVisibility() {
+    function updateTimeline() {
+        const activeItem = getClosestItemInViewport();
+
         timelineItems.forEach(item => {
-            if (isElementInViewport(item)) {
+            if (item === activeItem) {
                 item.classList.add('visible');
-                item.querySelector('.more-info').style.display = 'block'; // Show more info
+                item.querySelector('.more-info').style.display = 'block';
+            } else {
+                item.classList.remove('visible');
+                item.querySelector('.more-info').style.display = 'none';
             }
         });
     }
 
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Check visibility on page load
+    function smoothScrollToActive() {
+        const activeItem = getClosestItemInViewport();
+
+        if (activeItem) {
+            activeItem.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+            });
+        }
+    }
+
+    window.addEventListener('scroll', updateTimeline);
+    window.addEventListener('scroll', () => {
+        // Optional: Add a slight delay before snapping to the closest item.
+        clearTimeout(window.scrollTimeout);
+        window.scrollTimeout = setTimeout(smoothScrollToActive, 100);
+    });
+
+    updateTimeline(); // Initial call
 });
+
 

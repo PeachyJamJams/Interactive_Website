@@ -145,8 +145,11 @@ header p {
 .timeline-item img {
     max-width: 100%;
     border-radius: 5px;
-    margin-top: 10px;
+    margin: 20px auto; /* Adds spacing around the image */
+    padding: 10px; /* Ensures an inner gap for breathing room */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-color: #1e1e2f; /* Optional: to make padding area visible */
+    display: block; /* Centers the image within the parent */
 }
 
 .more-info {

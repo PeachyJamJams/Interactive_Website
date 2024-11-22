@@ -10,23 +10,76 @@ body {
 header {
     text-align: center;
     padding: 20px 10px;
-    background: #44475a;
+    background: linear-gradient(90deg, #6272a4, #44475a);
     color: #f8f8f2;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid #bd93f9;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+header:hover {
+    background: linear-gradient(90deg, #bd93f9, #6272a4);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-family: 'Trebuchet MS', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease;
+}
+
+header:hover h1 {
+    color: #50fa7b;
 }
 
 header p {
-    margin: 5px 0 0;
-    font-size: 1rem;
-    color: #bd93f9;
+    margin: 10px 0 0;
+    font-size: 1.2rem;
+    color: #ff79c6;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease;
+}
+
+header:hover p {
+    color: #f1fa8c;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #f8f8f2;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #50fa7b;
+    color: #282a36;
 }
 
 

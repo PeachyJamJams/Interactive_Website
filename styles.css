@@ -101,6 +101,7 @@ header p {
     flex-wrap: nowrap;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    flex: 1;
 }
 
 

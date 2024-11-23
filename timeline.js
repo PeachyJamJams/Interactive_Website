@@ -205,3 +205,99 @@ items.forEach(item => {
     observer.observe(item);
 });
 
+const items = document.querySelectorAll('.timeline-item');
+
+// Add active class on hover (for enlarging the item)
+items.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.classList.add('active');
+    });
+
+    item.addEventListener('mouseleave', () => {
+        item.classList.remove('active');
+    });
+
+    // Intersection Observer to trigger when item is in view during scrolling
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(item);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const body = document.body;
+
+    // Function to handle scaling on scroll (minimize/enlarge items)
+    function handleScaling() {
+        timelineItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            if (rect.left < window.innerWidth && rect.right > 0) {
+                item.classList.add('active');  // Enlarging the active item
+            } else {
+                item.classList.remove('active');  // Minimized state
+            }
+        });
+    }
+
+    // Update background based on the active timeline item
+    function updateBackground() {
+        let foundVisible = false;
+
+        timelineItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            if (rect.left < window.innerWidth && rect.right > 0 && !foundVisible) {
+                const background = item.getAttribute('data-background');
+                if (background) {
+                    body.style.backgroundImage = background;
+                    foundVisible = true;
+                }
+            }
+        });
+
+        // Optional: Set a default background when no timeline item is in view
+        if (!foundVisible && body.style.backgroundImage !== "url('default.jpg')") {
+            body.style.backgroundImage = "url('default.jpg')";
+        }
+    }
+
+    // Add 'active' class on hover (for enlarging the item)
+    timelineItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.classList.add('active');
+        });
+        item.addEventListener('mouseleave', () => {
+            item.classList.remove('active');
+        });
+
+        // Intersection Observer to trigger when item is in view during scrolling
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(item);
+    });
+
+    // Scroll event listener to trigger the scaling effect and background update
+    window.addEventListener('scroll', throttle(() => {
+        handleScaling();  // Handle item scaling during scroll
+        updateBackground();  // Update background based on active item
+    }, 100));
+
+    // Initial call to ensure proper scaling and background update on page load
+    handleScaling();
+    updateBackground();
+});

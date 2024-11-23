@@ -12,6 +12,19 @@ body {
     transition: background-image 1s ease-in-out;
 }
 
+/* Initially hide the content */
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* Style the active state of the collapsible button */
+.collapsible.active {
+    background-color: #ccc;
+}
+
+
 html {
     scroll-behavior: smooth;
 }

@@ -158,5 +158,27 @@ document.addEventListener("DOMContentLoaded", function () {
     updateBackground(); // Trigger on page load
 });
 
+// Wait for the document to load
+document.addEventListener("DOMContentLoaded", function () {
+    var collapsibles = document.querySelectorAll(".collapsible");
+
+    collapsibles.forEach(function(button) {
+        button.addEventListener("click", function () {
+            // Toggle the active class
+            this.classList.toggle("active");
+
+            // Get the next sibling of the button (the .content div)
+            var content = this.nextElementSibling;
+
+            // If the content is visible, hide it; otherwise, show it
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+});
+
 
 

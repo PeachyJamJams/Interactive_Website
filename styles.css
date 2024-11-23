@@ -138,6 +138,7 @@ header p {
     position: relative;
     scroll-snap-align: center; /* Ensures each item snaps into place */
     will-change: transform;
+    transform: scale(0.8);
 }
 
 .timeline-item:hover,
@@ -170,6 +171,7 @@ header p {
 
 .timeline-item img {
     max-width: 100%;
+    height: auto;
     border-radius: 5px;
     margin: 20px auto;
     padding: 10px;

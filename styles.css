@@ -87,23 +87,55 @@ header p {
     background-color: #6272a4;
 }
 
+.timeline {
+    position: relative;
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 20px;
+    white-space: nowrap;
+    gap: 50px;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: flex-start;
+    overflow-x: scroll; /* Horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enforces snapping for scroll */
+}
+
 .timeline-item {
+    position: relative;
+    margin: 0; /* Remove margin as it might conflict with horizontal layout */
+    padding: 20px;
+    width: 250px; /* Adjust the width of each item */
+    background: #44475a;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateX(-50px); /* Start position for animation */
+    scroll-snap-align: center; /* Each item will snap into place in the viewport */
+    animation: slideIn 0.6s ease-out;
+}
+
+
+html {
+    scroll-behavior: smooth;
 }
 
 .timeline-item.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
+    animation: fadeInUp 0.6s ease-out;
 }
 
-
-.timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
+/* Add some nice animations for the items */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .timeline::before {
@@ -118,42 +150,12 @@ header p {
     z-index: -1;
 }
 
-.timeline-item {
-    position: relative;
-    background: #44475a;
-    margin: 30px 0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    transform: translateY(50px);
-    width: calc(50% - 30px);
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.timeline-item.visible {
-    transform: translateY(0);
-    opacity: 1; /* Fade in */
-    animation: fadeInUp 0.6s ease-out;
-}
-
 .timeline-item:nth-child(odd) {
-    left: 0;
+    background: #bd93f9; /* Alternate background color for visual appeal */
 }
 
 .timeline-item:nth-child(even) {
-    left: 50%;
+    background: #6272a4; /* Another alternate background color */
 }
 
 .team {
@@ -239,4 +241,16 @@ footer {
     z-index: 10;
     opacity: 1;
     transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column; /* Stack items vertically on small screens */
+        overflow-x: hidden; /* Disable horizontal scroll */
+    }
+
+    .timeline-item {
+        width: 100%; /* Make timeline items take full width */
+        margin-bottom: 20px; /* Add margin for spacing between items */
+    }
 }

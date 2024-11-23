@@ -134,6 +134,7 @@ header p {
     flex-shrink: 0;
     position: relative;
     scroll-snap-align: start; /* Ensures each item snaps into place */
+    will-change: transform;
 }
 
 

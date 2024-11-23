@@ -93,11 +93,9 @@ header p {
     align-items: flex-start;
     flex-wrap: nowrap;
     scroll-snap-type: x mandatory;
-}
-
-.timeline {
     scroll-behavior: smooth;
 }
+
 
 .timeline::-webkit-scrollbar {
     display: none;

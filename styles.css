@@ -72,14 +72,13 @@ header p {
 
 /* Timeline Container */
 .timeline {
-    position: relative;
     display: flex;
-    overflow-x: auto;
-    padding: 20px;
-    white-space: nowrap;
-    gap: 50px;
-    align-items: flex-start;
-    scroll-snap-type: x mandatory;
+    overflow-x: scroll; /* Makes timeline horizontally scrollable */
+    gap: 20px;
+    justify-content: flex-start;
+    padding: 20px 0;
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: nowrap;
 }
 
 .timeline::before {
@@ -96,19 +95,16 @@ header p {
 
 /* Timeline Items */
 .timeline-item {
+    width: 250px; /* Width of each timeline item */
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-shrink: 0; /* Prevents items from shrinking */
     position: relative;
-    margin: 0;
-    padding: 20px;
-    width: 250px;
-    background: #44475a;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    transform: translateX(-50px);
-    scroll-snap-align: center;
-    animation: slideIn 0.6s ease-out;
 }
+
 
 .timeline-item.visible {
     opacity: 1;
@@ -136,18 +132,15 @@ header p {
 .timeline-item[data-tooltip]:hover::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 100%;
+    top: -30px;
     left: 50%;
     transform: translateX(-50%);
+    padding: 8px 10px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 5px 10px;
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 1em;
     white-space: nowrap;
-    z-index: 10;
-    opacity: 1;
-    transition: opacity 0.3s ease;
 }
 
 .more-info {

@@ -122,11 +122,12 @@ header p {
 .timeline::before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: -10px; /* Adjust the tick position */
     left: 0;
     right: 0;
     height: 4px;
     background: #bd93f9;
+    background-color: #333; /* Dark color for the tick */
     transform: translateY(-50%);
     z-index: -1;
 }
@@ -279,15 +280,14 @@ footer {
     height: 60px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .timeline {
-        flex-direction: column;
-        overflow-x: hidden;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
     }
 
     .timeline-item {
-        width: 100%;
+        transform: scale(1); /* No scaling on smaller screens */
         margin-bottom: 20px;
     }
 }

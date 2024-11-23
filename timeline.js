@@ -96,5 +96,67 @@ for (let i = 0; i < coll.length; i++) {
     });
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const timeline = document.querySelector('.timeline');
+    let isScrolling = false;  // Flag to prevent multiple scroll events
+
+    // Enable horizontal scroll with mouse wheel
+    timeline.addEventListener('wheel', function (event) {
+        if (isScrolling) return;  // Prevent multiple scroll events
+        isScrolling = true;
+
+        // Determine scroll direction
+        if (event.deltaY !== 0) {
+            timeline.scrollLeft += event.deltaY;  // Scroll horizontally based on vertical scroll
+        }
+
+        // Prevent default scroll behavior
+        event.preventDefault();
+
+        // Reset the scrolling flag after a short delay
+        setTimeout(() => {
+            isScrolling = false;
+        }, 100);
+    });
+
+    // Existing Timeline Animation and Visibility Logic
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const body = document.body;
+
+    function checkVisibility() {
+        timelineItems.forEach(item => {
+            if (isElementInViewport(item)) {
+                item.classList.add('visible');
+            }
+        });
+    }
+
+    // Update background based on timeline item visibility
+    function updateBackground() {
+        let foundVisible = false;
+
+        timelineItems.forEach(item => {
+            if (isElementInViewport(item) && !foundVisible) {
+                const background = item.getAttribute('data-background');
+                if (background) {
+                    body.style.backgroundImage = background;
+                    foundVisible = true;
+                }
+            }
+        });
+
+        // Optional: Set a default background when no timeline item is in view
+        if (!foundVisible && body.style.backgroundImage !== "url('default.jpg')") {
+            body.style.backgroundImage = "url('default.jpg')";
+        }
+    }
+
+    window.addEventListener('scroll', throttle(checkVisibility, 100));
+    window.addEventListener('scroll', throttle(updateBackground, 100));
+
+    checkVisibility(); // Trigger on page load
+    updateBackground(); // Trigger on page load
+});
+
 
 

@@ -10,6 +10,9 @@ body {
     background-position: center;
     background-attachment: fixed;
     transition: background-image 1s ease-in-out;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Initially hide the content */

@@ -181,4 +181,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+const items = document.querySelectorAll('.timeline-item');
+
+items.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        item.classList.add('active');
+    });
+    item.addEventListener('mouseout', () => {
+        item.classList.remove('active');
+    });
+
+    // Optional: Scroll detection using Intersection Observer (for when items come into view)
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(item);
+});
 

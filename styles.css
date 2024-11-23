@@ -65,6 +65,28 @@ header p {
     color: #bd93f9;
 }
 
+.collapsible {
+    background-color: #6272a4;
+    color: #838383;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #f8f8f2;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #6272a4;
+}
+
 .timeline-item {
     opacity: 0;
     transform: translateY(50px);

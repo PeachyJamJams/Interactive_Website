@@ -18,14 +18,13 @@ body {
 
 /* Initially hide the content */
 .content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden; /* Prevents overflowing text */
+    transition: max-height 0.3s ease-out; /* Smooth toggle animation */
 }
 
-/* Style the active state of the collapsible button */
-.collapsible.active {
-    background-color: #ccc;
+.collapsible.active + .content {
+    max-height: 500px; /* Enough space to display the content */
 }
 
 

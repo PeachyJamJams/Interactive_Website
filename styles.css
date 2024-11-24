@@ -27,6 +27,41 @@ body {
     max-height: 500px; /* Enough space to display the content */
 }
 
+/* Stylish Collapsible Button */
+button.collapsible {
+    font-size: 1rem; /* Standard readable font size */
+    padding: 10px 20px; /* Comfortable padding */
+    color: #f8f8f2; /* Light text color for contrast */
+    background: linear-gradient(135deg, #6272a4, #bd93f9); /* Gradient for a modern look */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Smooth, rounded corners */
+    cursor: pointer; /* Pointer cursor to indicate interactivity */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add depth with shadow */
+    transition: all 0.3s ease; /* Smooth transitions for effects */
+    text-transform: capitalize; /* Optional: Capitalize text for consistency */
+    width: 100%; /* Full width button */
+    display: block; /* Forces new line below content */
+    margin: 12 auto;
+}
+
+/* Hover Effect */
+button.collapsible:hover {
+    background: linear-gradient(135deg, #bd93f9, #6272a4); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+/* Active State */
+button.collapsible:active {
+    transform: translateY(2px); /* "Pressed" effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dimmer shadow */
+}
+
+/* Focus for Accessibility */
+button.collapsible:focus {
+    outline: 2px solid #bd93f9; /* Visible focus indicator */
+    outline-offset: 2px;
+}
 
 
 html {
@@ -296,34 +331,3 @@ footer {
     }
 }
 
-/* General Button Styling */
-button.collapsible {
-    font-size: 1rem; /* Adjust font size for readability */
-    padding: 10px 20px; /* Add sufficient padding */
-    color: #f8f8f2; /* Text color */
-    background: linear-gradient(135deg, #6272a4, #bd93f9); /* Gradient background */
-    border: none; /* Remove borders */
-    border-radius: 8px; /* Rounded corners */
-    cursor: pointer; /* Show pointer cursor */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: all 0.3s ease; /* Smooth transitions for hover effects */
-}
-
-/* Hover Effect */
-button.collapsible:hover {
-    background: linear-gradient(135deg, #bd93f9, #6272a4); /* Reverse gradient on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-/* Active State */
-button.collapsible:active {
-    transform: translateY(2px); /* Pressed down effect */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dimmer shadow */
-}
-
-/* Add focus outline for accessibility */
-button.collapsible:focus {
-    outline: 2px solid #f8f8f2;
-    outline-offset: 2px;
-}

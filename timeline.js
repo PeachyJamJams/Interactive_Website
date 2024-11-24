@@ -107,3 +107,30 @@ window.addEventListener('click', function (event) {
         }
     });
 });
+
+
+// Function to open the modal
+function openModal(modalId) {
+    // Get the modal element by its ID
+    const modal = document.getElementById(modalId);
+    // Show the modal by changing its display property
+    modal.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal(modalId) {
+    // Get the modal element by its ID
+    const modal = document.getElementById(modalId);
+    // Hide the modal by changing its display property
+    modal.style.display = "none";
+}
+
+// Event listener to close modal when clicking outside of it
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName('modal');
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target === modals[i]) {
+            modals[i].style.display = "none";
+        }
+    }
+};

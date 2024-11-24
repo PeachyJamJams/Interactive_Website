@@ -325,36 +325,43 @@ document.querySelectorAll('.timeline-item').forEach(item => {
 // Select all collapsible buttons
 const collapsibles = document.querySelectorAll('.collapsible');
 
+// Add event listeners to collapsible buttons
 collapsibles.forEach(button => {
     button.addEventListener('click', function () {
-        // Toggle active class on the button
+        // Toggle active state
         this.classList.toggle('active');
-        
-        // Toggle visibility of the next sibling element (the .content div)
-        const content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null; // Collapse content
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px"; // Expand content
-        }
+
+        // Toggle visibility of the card and background change
+        const parentItem = this.closest('.timeline-item');
+        const title = parentItem.querySelector('h2').textContent;
+        const content = this.getAttribute('onclick').match(/'([^']+)', '([^']+)'/)[2]; // Extract content
+
+        showCard(title, content, parentItem.dataset.background);
     });
 });
 
-// Function to show the central card with information
-function showCard(title, content) {
-    const card = document.getElementById("info-card");
-    const cardTitle = document.getElementById("info-title");
-    const cardContent = document.getElementById("info-text");
+// Function to show the central card with information and change background
+function showCard(title, content, backgroundUrl) {
+    const card = document.querySelector('.card-container');
+    const cardTitle = card.querySelector('.card-title');
+    const cardContent = card.querySelector('.card-description');
+    const timelineContainer = document.querySelector('.timeline-container');
 
-    cardTitle.textContent = title; // Set the title dynamically
-    cardContent.textContent = content; // Set the content dynamically
+    // Update card content
+    cardTitle.textContent = title;
+    cardContent.textContent = content;
 
-    // Display the card
-    card.style.display = "block";
+    // Update background
+    if (backgroundUrl) {
+        timelineContainer.style.backgroundImage = backgroundUrl;
+    }
+
+    // Show the card
+    card.classList.add('visible');
 }
 
 // Function to hide the card
 function hideCard() {
-    const card = document.getElementById("info-card");
-    card.style.display = "none";
+    const card = document.querySelector('.card-container');
+    card.classList.remove('visible');
 }

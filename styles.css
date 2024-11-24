@@ -304,26 +304,19 @@ header p {
     text-decoration: underline;
 }
 
-/* Ensure body takes full height and uses Flexbox */
-body {
-    display: flex;
-    flex-direction: column; /* Arrange children vertically */
-    justify-content: space-between; /* Space between content and footer */
-    min-height: 100vh; /* Full viewport height */
-    margin: 0; /* Remove default margin */
-}
-
-/* Footer */
+/* Footer Styling */
 footer {
     text-align: center;
     padding: 20px;
     background: #44475a;
     color: #f8f8f2;
     font-size: 0.9rem;
-    position: relative; /* Ensure it's part of the natural layout flow */
+    margin-top: 20px;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: 1000;
     height: 100px;
 }
 

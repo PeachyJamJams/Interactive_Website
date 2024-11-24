@@ -341,3 +341,21 @@ collapsibles.forEach(button => {
     });
 });
 
+// Function to show the central card with information
+function showCard(title, content) {
+    const card = document.getElementById("info-card");
+    const cardTitle = document.getElementById("info-title");
+    const cardContent = document.getElementById("info-text");
+
+    cardTitle.textContent = title; // Set the title dynamically
+    cardContent.textContent = content; // Set the content dynamically
+
+    // Display the card
+    card.style.display = "block";
+}
+
+// Function to hide the card
+function hideCard() {
+    const card = document.getElementById("info-card");
+    card.style.display = "none";
+}

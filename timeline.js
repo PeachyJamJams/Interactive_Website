@@ -322,3 +322,22 @@ const observer = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.timeline-item').forEach(item => {
     observer.observe(item);
 });
+
+// Select all collapsible buttons
+const collapsibles = document.querySelectorAll('.collapsible');
+
+collapsibles.forEach(button => {
+    button.addEventListener('click', function () {
+        // Toggle active class on the button
+        this.classList.toggle('active');
+        
+        // Toggle visibility of the next sibling element (the .content div)
+        const content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null; // Collapse content
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px"; // Expand content
+        }
+    });
+});
+

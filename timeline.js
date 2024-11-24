@@ -301,3 +301,24 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScaling();
     updateBackground();
 });
+
+
+// Create an IntersectionObserver to observe when the timeline items come into view
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Add the 'visible' class to make images fade in
+            entry.target.classList.add('visible');
+        } else {
+            // Optionally remove the 'visible' class when the item is not in view
+            entry.target.classList.remove('visible');
+        }
+    });
+}, {
+    threshold: 0.5 // Trigger when 50% of the item is in view
+});
+
+// Select all the timeline items and observe them
+document.querySelectorAll('.timeline-item').forEach(item => {
+    observer.observe(item);
+});

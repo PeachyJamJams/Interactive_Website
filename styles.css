@@ -31,7 +31,7 @@ body {
 button.collapsible {
     font-size: 1rem; /* Standard readable font size */
     padding: 10px 20px; /* Comfortable padding */
-    color: #f8f8f2; /* Light text color for contrast */
+    color: #230b4e; /* Light text color for contrast */
     background: linear-gradient(135deg, #6272a4, #bd93f9); /* Gradient for a modern look */
     border: none; /* Remove border */
     border-radius: 8px; /* Smooth, rounded corners */

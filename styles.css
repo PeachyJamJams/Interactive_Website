@@ -206,12 +206,17 @@ header p {
 }
 
 .more-info {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 20px; /* Add space between the button and other content */
+    padding: 10px 20px; /* Increase padding for better clickability */
     background: #6272a4;
-    border-radius: 5px;
     color: #f8f8f2;
-    display: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem; /* Increase font size */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Ensure the button stays inline */
 }
 
 .timeline-item.visible .more-info {

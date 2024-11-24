@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    margin-top: 60px;
     background: linear-gradient(to bottom, #1e1e2f, #282a36);
     color: #f8f8f2;
     line-height: 1.6;

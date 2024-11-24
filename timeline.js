@@ -37,18 +37,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Collapsible Content (For showing information when clicked)
+    // Add event listeners to all collapsible buttons
     document.querySelectorAll('.collapsible').forEach(button => {
-        button.addEventListener('click', function () {
-            this.classList.toggle('active');
-            const content = this.nextElementSibling;
-            content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
-
-            const title = this.closest('.timeline-item').querySelector('h2').textContent;
-            const contentText = this.getAttribute('onclick').match(/'([^']+)', '([^']+)'/)[2]; // Extract content
-            showCard(title, contentText);
+    button.addEventListener('click', () => {
+        // Toggle the 'active' class to show/hide the content
+        const content = button.nextElementSibling;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null; // Hide content
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px"; // Show content
+        }
+        button.classList.toggle('active');
         });
     });
+
 
     // Function to show the central card with information
     function showCard(title, content) {

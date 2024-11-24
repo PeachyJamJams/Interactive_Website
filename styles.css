@@ -148,18 +148,16 @@ header p {
     scroll-snap-align: center; /* Ensures each item snaps into place */
     will-change: transform;
     transform: scale(0.8);
-    overflow: hidden; /* Prevent content overflow */
 }
 
 .timeline-item:hover,
 .timeline-item.active {
-    transform: scale(1.1);
+    transform: scale(1.2);
     opacity: 1;
 }
 
 .timeline-item h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
+    font-size: 20px;
     transition: font-size 0.3s ease;
 }
 
@@ -181,10 +179,8 @@ header p {
 }
 
 .timeline-item img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    max-height: 150px;
-    object-fit: cover;
     border-radius: 5px;
     margin: 20px auto;
     padding: 10px;
@@ -208,29 +204,12 @@ header p {
 }
 
 .more-info {
-    margin-top: 15px; /* Add spacing above the button */
-    padding: 12px 24px; /* Increase padding for better clickability */
-    background: #6272a4; /* Dark background color for contrast */
-    color: #f8f8f2; /* Text color for good readability */
-    border: none; /* Remove border */
-    border-radius: 8px; /* Rounded corners for a modern look */
-    font-size: 1.1rem; /* Increase font size */
-    font-weight: bold; /* Make the text bold */
-    cursor: pointer; /* Add a pointer to indicate it's clickable */
-    text-align: center; /* Center the text */
-    transition: transform 0.2s ease, background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-}
-
-.more-info:active {
-    transform: translateY(1px) scale(1); /* Button presses in slightly */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dim shadow on click */
-}
-
-.more-info:hover {
-    background: #bd93f9; /* Change background color on hover */
-    transform: translateY(-2px) scale(1.1); /* Slight hover lift and enlarge */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    margin-top: 10px;
+    padding: 10px;
+    background: #6272a4;
+    border-radius: 5px;
+    color: #f8f8f2;
+    display: none;
 }
 
 .timeline-item.visible .more-info {

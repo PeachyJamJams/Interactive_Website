@@ -205,7 +205,6 @@ items.forEach(item => {
     observer.observe(item);
 });
 
-const items = document.querySelectorAll('.timeline-item');
 
 // Add active class on hover (for enlarging the item)
 items.forEach(item => {

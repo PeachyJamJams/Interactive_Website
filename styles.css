@@ -11,7 +11,7 @@ body {
     background-attachment: fixed;
     transition: background-image 1s ease-in-out;
     min-height: 100vh;
-    height: 500px;
+    height: 100px;
     display: flex;
     flex-direction: column;
 }
@@ -95,7 +95,7 @@ header p {
     display: flex;
     overflow-x: auto; /* Ensures horizontal scrolling */
     gap: 20px;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 20px 0;
     align-items: flex-start;
     flex-wrap: nowrap;

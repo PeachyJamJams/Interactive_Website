@@ -76,3 +76,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+// Get all the buttons and modals
+const buttons = document.querySelectorAll('.collapsible');
+const modals = document.querySelectorAll('.modal');
+const closeButtons = document.querySelectorAll('.close');
+
+// Open the corresponding modal when a button is clicked
+buttons.forEach(button => {
+    button.addEventListener('click', function () {
+        const modalId = this.getAttribute('data-target');
+        const modal = document.getElementById(modalId);
+        modal.style.display = "block";  // Show the modal
+    });
+});
+
+// Close the modal when the close button is clicked
+closeButtons.forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+        const modal = closeBtn.closest('.modal');
+        modal.style.display = "none";  // Hide the modal
+    });
+});
+
+// Close the modal when the user clicks anywhere outside the modal content
+window.addEventListener('click', function (event) {
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";  // Close modal if clicked outside of content
+        }
+    });
+});

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History of Clothing</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to  CSS file -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
 </head>
 <body>
     <header>
@@ -18,265 +18,241 @@
         </div>
     </header>
     
-
     <main>
         <section class="timeline">
-
-
-
-
-
-
+            <!-- Timeline items -->
             <div class="timeline-item" id="item1" data-tooltip="3,200 BC" data-background="url('pics/hats.jpg')" data-year="3200">
                 <h2>Hats</h2>
                 <p>Originally created to protect your head from the environment.</p>
                 <img src="pics/hats2.jpg" alt="Hat Photo" />
-                <button class="collapsible" 
-                        onclick="showCard('hats', 'Could be considered as old as cavemen but the first confirmed drawn record of a hat is dated around 3200 BC in Egypt.From their birth to before modern material and fabrics, hats were customarily made from animal hide, fur, and even straw/grass like baskets with the same weaving patterns.')"> 
-                        Hat information...
-                </button>
+                <button class="modal-trigger" onclick="openModal('hatsModal')">Hat information...</button>
             </div>
-
-
-
 
             <div class="timeline-item" id="item2" data-tooltip="7,000 BC" data-background="url('pics/shoes.jpg')" data-year="7000">
                 <h2>Shoes</h2>
-                <p>The first knwon pair of shoes were made of tree bark.</p>
+                <p>The first known pair of shoes were made of tree bark.</p>
                 <img src="pics/shoes2.jpg" alt="Shoes Photo" />
-                <button class="collapsible"
-                        onclick="showCard('Shoes', 'Earliest proven examples of footwear could be traced back to 7,000-8,000 BC, which were Sagebrush bark sandals found in the Fort Rock Cave in Oregon, USA. Although, the romans were the first to design left and right foot shoes. Shoes were originally designed feet from sharp objects, rough terrain, and other  elements that could cause harm. Warmth during the harsh winters were also other purposes of shoes. Over human history, shoes changed with color, design, style,  purposes such as sports, and even for overall health to what we see today.')"> 
-                    Shoes information...
-                </button>
+                <button class="modal-trigger" onclick="openModal('shoesModal')">Shoes information...</button>
             </div>
-
-
-
-
-
 
             <div class="timeline-item" id="item3" data-tooltip="13th Century" data-background="url('pics/glasses.jpg')" data-year="1200">
                 <h2>Glasses/Sunglasses</h2>
                 <p>The first glasses were made of wood, horn, and tortoiseshell.</p>
                 <img src="pics/glasses2.jpg" alt="Glasses Photo" />
-                <button class="collapsible"
-                        onclick="showCard('Glasses', 'however were in existence since 13th century China and used by judges as to not scrutinize their judgement through facial expressions. The dark quartz glasses                       they wore helped disguise their eyes as to not be read before final judgement was made. Modern sunglasses became possible once the manipulation of UV light was discovered.                       The Inuit people can be credited with the earliest version of sunglasses. In the late 19th century, they used whale bone with thin slits to see through which shielded their                        eyes from the bright reflection of light coming off the white snow around them.')">                  
-                        Glasses information...
-                </button>
+                <button class="modal-trigger" onclick="openModal('glassesModal')">Glasses information...</button>
             </div>
-
-
-
-
 
             <div class="timeline-item" id="item4" data-tooltip="1600s" data-background="url('pics/underwear.jpg')" data-year="1600">
-                <h2>underwear</h2>
+                <h2>Underwear</h2>
                 <p>The earliest underwear was loincloth that went between the legs and fastened around the waist.</p>
                 <img src="pics/underwear2.jpg" alt="Underwear Photo" />
-                <button class="collapsible"
-                        onclick="showCard('Underwear', 'The modern style underwear with a separate hole for each leg was first designed in the 1600s. Women were the first to sport such undergarments, but men eventually picked them                       up as well. Even though they were mainly invented to help people protect their genitals from the environment, with the development of modern society, they preserved modesty.                       Along with preventing abrasion from outer clothes and other rougher garments.')"> 
-                        Underwear information...
-                </button>
+                <button class="modal-trigger" onclick="openModal('underwearModal')">Underwear information...</button>
             </div>
-
-
-
-
-
 
             <div class="timeline-item" id="item5" data-tooltip="1920" data-background="url('pics/bras2.jpg')" data-year="1920">
                 <h2>Bras/Corsets</h2>
-                <p>Corcets are the predecessors of the modern bra and were originaly made of wood, metal or whalebone.</p>
+                <p>Corsets are the predecessors of the modern bra and were originally made of wood, metal or whalebone.</p>
                 <img src="pics/bra.jpg" alt="Bra Photo" />
-                <button class="collapsible"
-                        onclick="showCard('Bras', 'Multibillion dollar companies dedicate themselves to bras/corsets in our modern day but these pieces date back all the way back to women in Greece and Rome. Their bras were                      mere straps of cloth fastened snug around their chest and held in place using pins in the back. They were used mainly when doing sports or any other strenuous physical                       activity. Corsets gained massive popularity during medieval times and were made of whale bone to help keep the ridged shape allowing for the cone/hourglass shape under                       pressure that was desired. With time, both bras and corsets received vast modifications for greater comfort, appeal, and support for women of all bust shape/size.')"> 
-                        Bras/Corsets information...
-                </button>
+                <button class="modal-trigger" onclick="openModal('brasModal')">Bras/Corsets information...</button>
             </div>
-
-
-
-
-
 
             <div class="timeline-item" id="item6" data-tooltip="5000" data-background="url('pics/leggings.jpg')" data-year="5000">
                 <h2>Leggings</h2>
                 <p>Leggings were originally two separate garments instead of the modern one piece.</p>
                 <img src="pics/leggings2.jpg" alt="Leggings Photo" />
-                <button class="collapsible"
-                        onclick="showCard('Leggings', 'Originally worn solely by men and vastly popular in medieval Scottland, were made of rough material such as leather or chainmail. With time, they turned to wool as                     material to keep warm and further protect from the environment. Now, they are a common piece of clothing that still suffice their original purpose of protection but                      have become modernized with form fitting, designed, and colors to meets demand needs/preferences.')"> 
-                        Leggings information...</button>
+                <button class="modal-trigger" onclick="openModal('leggingsModal')">Leggings information...</button>
             </div>
-
-
-
-
 
             <div class="timeline-item" id="item7" data-tooltip="1636" data-background="url('pics/ties.jpg')" data-year="1636">
                 <h2>Ties</h2>
                 <p>Its origins come from military use to represent rank.</p>
                 <img src="pics/ties2.jpg" alt="Ties Photo" />
-        <button class="collapsible"> Ties information...</button>
-                    <div class="content">
-                    <p>First popularized in 1636 Europe by King Louis XIV with his group of Croatian mercenaries who wore cravats around their necks for protection. With time these cravats would
-                        be highly distinguishable with color, patterns, and high-end materials signifying rank. While they paraded through Paris, fashionistas become dazzled by them for such
-                        colors and patterns that they adapted such pieces often having them made of high-end expensive materials to show off their wealth. This still holds true to this day 
-                        with the vast options of ties. </p>
-                    </div>
-                </div>
+                <button class="modal-trigger" onclick="openModal('tiesModal')">Ties information...</button>
             </div>
-
-
-
-
 
             <div class="timeline-item" id="item8" data-tooltip="1870" data-background="url('pics/Jeans.jpg')" data-year="1870">
                 <h2>Jeans</h2>
                 <p>Invented for tough environments and longevity purposes.</p>
                 <img src="pics/jeans2.jpg" alt="Jeans Photo" />
-        <button class="collapsible"> Jeans information...</button>
-                    <div class="content">
-                    <p>Most common version known are blue jeans, although may seem to have been around forever, are only an estimated 150 years old. As many inventions in history, they were
-                        created to solve a common problem for people. A strong pair of pants were needed to withstand the tough environment by minors in the 1870s. Jacob Davis created such
-                        a piece of clothing made from duck cloth, a strong canvas material. Together, with Levi Strouss, they created the first blue jean made from denim in 1873. Thus,
-                        forever cementing blue jeans in clothing history which would later see them expand to different fashions and uses</p>
-                    </div>
-                </div>
+                <button class="modal-trigger" onclick="openModal('jeansModal')">Jeans information...</button>
             </div>
-
-
-
-
 
             <div class="timeline-item" id="item9" data-tooltip="3rd Century" data-background="url('pics/tunics.jpg')" data-year="2000">
                 <h2>Tunics</h2>
                 <p>Extremely popular in ancient Rome and worn by both men and women.</p>
                 <img src="pics/tunics2.jpg" alt="Tunics Photo" />
-        <button class="collapsible"> Tunics information...</button>
-                    <div class="content">
-                    <p>Worn by ancient Greeks and Romans for the loose fitting and cool feel it gave in hot regions while providing comfort. This piece of clothing was adopted by
-                        them since its creation in 3rd century BCE.</p>
-                    </div>
-                </div>
+                <button class="modal-trigger" onclick="openModal('tunicsModal')">Tunics information...</button>
             </div>
-
-
-
-
 
             <div class="timeline-item" id="item10" data-tooltip="1938" data-background="url('pics/cargo.jpg')" data-year="1938">
-                <h2>blue jeans,cargos</h2>
+                <h2>Blue jeans, Cargos</h2>
                 <p>Are known as vaqueros("cowboys") or tejanos("Texans") in Spain.</p>
                 <img src="pics/cargo2.jpg" alt="Cargo Pants Photo" />
-        <button class="collapsible"> Blue jeans and Cargos information...</button>
-                    <div class="content">
-                    <p>Cargo pants were born in 1938 in Britain and worn by military personal as part of their Battle dress Uniforms (BDUs). They gained large popularity outside of
-                        military use for their practical functionality in the late 20th century. Large pockets near the thigh offered easy access for tools and supplies making it
-                        ideal for outdoor use as well as manual labor work. Fashion trends also led to changes in cargo pants such as color, added print, and for all ages/sizes as
-                        well as gender. The blue jeans that we know today were originally created through the combined efforts of Jacob Davis and Levi Strauss in 1873 due to the 
-                        demand of a tough long-lasting pair of pants. </p>
-                    </div>
-                </div>
+                <button class="modal-trigger" onclick="openModal('cargoModal')">Blue jeans and Cargos information...</button>
             </div>
-
-
-
-
 
             <div class="timeline-item" id="item11" data-tooltip="19th Century" data-background="url('pics/swim.jpg')" data-year="1900">
                 <h2>Swimsuits</h2>
                 <p>The modern bikini was invented by an auto engineer-turned fashion designer.</p>
                 <img src="pics/swim2.jpg" alt="Swimwear Photo" />
-        <button class="collapsible"> Swimsuits information...</button>
-                    <div class="content">
-                    <p>Swimsuits were not masse produced until the 19th century when railroads were available to the masses so that 
-                        they can travel to beaches and large bodies of water. At this early age, swimsuits covered the entire body 
-                        for both men and women. The early 20th century saw changes in swimsuits through their design being more form 
-                        fitted and aerodynamic. Yet they had to still meet decency laws of the time in the 1930s. </p>
-                    </div>
-                </div>
+                <button class="modal-trigger" onclick="openModal('swimwearModal')">Swimsuits information...</button>
             </div>
-
-
-
-
 
             <div class="timeline-item" id="item12" data-tooltip="19th Century" data-background="url('pics/blazer.jpg')" data-year="1800">
                 <h2>Men's Blazer</h2>
                 <p>Gained the name blazer from the original one being bright red(blazing color).</p>
                 <img src="pics/blazer2.jpg" alt="Men's Blazer" />
-        <button class="collapsible"> Men's blazers information...</button>
-                    <div class="content">
-                    <p>This piece of clothing emerged from the world of rowing when the Cambridge University Lady Margaret Boat
-                        Club sported red jackets. These red jackets became the first blazers which then gained popularity and fame
-                        especially with their versatile capabilities. That notable piece of the blazer inspired the adaptation to 
-                        military use in the early 19th century. </p>
-                    </div>
-                </div>
+                <button class="modal-trigger" onclick="openModal('blazerModal')">Men's Blazers information...</button>
             </div>
-
-
-
-
 
             <div class="timeline-item" id="item13" data-tooltip="1913" data-background="url('pics/shirt.jpg')" data-year="1913">
                 <h2>T-shirts</h2>
                 <p>First marketed as being "bachelor undershirts".</p>
                 <img src="pics/shirts2.jpg" alt="T Shirts Photo" />
-        <button class="collapsible"> T-shirts information...</button>
-                    <div class="content">
-                    <p>A simple and iconic name was created by a novelist, F. Scott Fitzgerald. He used this term in his novel
-                        “This Side of Paradise” to describe the T shape of the shirt. The creation of this shirt came from meeting 
-                        consumers demand for a top to be used during warm weather. Normally people would take a full onesie, cut the
-                        top portion off, and tuck in the end of top into their bottoms. The U.S. Navy popularized this garment in 1913
-                        making it standard issue as undershirts for all seamen.</p>
-                    </div>
-                </div>
+                <button class="modal-trigger" onclick="openModal('shirtsModal')">T-shirts information...</button>
             </div>
 
-
-
-
-
-            <div class="timeline-item" id="item14" data-tooltip="1920s"data-background="url('pics/hawaii.jpg')" data-year="1920">
+            <div class="timeline-item" id="item14" data-tooltip="1920s" data-background="url('pics/hawaii.jpg')" data-year="1920">
                 <h2>Hawaiian Shirts</h2>
                 <p>First made from breathable kimono fabric.</p>
                 <img src="pics/hawaii2.jpg" alt="Hawaiian Shirts Photo" />
-        <button class="collapsible"> Hawaiian shirts information...</button>
-                    <div class="content">
-                    <p>These shirts came to fruition from adapting with events during the 1920s and 1930s when they were invented. 
-                        Originally showing Japanese patterns, the patterns turned into native flowers and other vegetation of the 
-                        Hawaiian Islands. They became increasingly popular through the use by service members in the armed forces 
-                        returning to the mainland while boasting these new colorful and eye-catching shirts.</p>
-                    </div>
-                </div>
+                <button class="modal-trigger" onclick="openModal('hawaiianShirtsModal')">Hawaiian shirts information...</button>
             </div>
-
-
-
 
             <div class="timeline-item" id="item15" data-tooltip="1870" data-background="url('pics/workout.jpg')" data-year="1870">
-                <h2>Workout clothings (stretchy)</h2>
+                <h2>Workout Clothes (Stretchy)</h2>
                 <p>Made for sports/exercise and later created fashion like athleisure.</p>
                 <img src="pics/workout2.jpg" alt="Workout Clothes Photo" />
-        <button class="collapsible"> Workout clothing information...</button>
-                    <div class="content">
-                    <p>First invented in the 1870s by John Redfern for women in highly active activities such as tennis, archery, and yachting. 
-                        They continued to be only seen when doing sports or exercising but later garnered popularity outside of these activities. 
-                        The 1950s created a demand for clothing that was functional, fashionable, and had an emphasis in comfort with ease of movement.
-                        Thus creating fashion trends were people sported activewear in their everyday activities.</p>
-                    </div>
-                </div>
+                <button class="modal-trigger" onclick="openModal('workoutModal')">Workout clothing information...</button>
             </div>
-            <!-- Add more timeline items here -->
         </section>
     </main>
+
+    <!-- Modals -->
+    <div id="hatsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('hatsModal')">&times;</span>
+            <h3>Hats</h3>
+            <p>Hats have been worn for thousands of years, dating back to ancient Egypt around 3200 BC. Initially, they were worn for protection from the sun and the elements, but they gradually became symbols of status and fashion. Early hats were made of materials like straw, felt, and wool.</p>
+        </div>
+    </div>
+
+    <div id="shoesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('shoesModal')">&times;</span>
+            <h3>Shoes</h3>
+            <p>The earliest known shoes, dating back to around 7,000 BC, were made from plant fibers, animal skins, and bark. Early shoes were primarily designed for protection from the elements, with some of the earliest examples found in ancient Mesopotamia and Egypt.</p>
+        </div>
+    </div>
+
+    <div id="glassesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('glassesModal')">&times;</span>
+            <h3>Glasses/Sunglasses</h3>
+            <p>The first glasses were invented in Italy during the 13th century, originally made from quartz or glass. They were used to correct vision impairments and became a status symbol for the elite.</p>
+        </div>
+    </div>
+
+    <div id="underwearModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('underwearModal')">&times;</span>
+            <h3>Underwear</h3>
+            <p>Underwear has been around since ancient times, originally taking the form of loincloths or basic garments worn beneath other clothing. It wasn’t until the 18th century that more structured, fitted underwear like stockings and corsets became popular.</p>
+        </div>
+    </div>
+
+    <div id="brasModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brasModal')">&times;</span>
+            <h3>Bras/Corsets</h3>
+            <p>Corsets became popular in the 16th century and were designed to shape the body, particularly the waist. In the early 20th century, the bra evolved from the corset, offering more comfort while providing similar shaping benefits.</p>
+        </div>
+    </div>
+
+    <div id="leggingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('leggingsModal')">&times;</span>
+            <h3>Leggings</h3>
+            <p>Leggings have evolved from early history, where they were worn by men and women as separate garments. Today, they are primarily worn by women, originally as athletic wear and now as fashion items as well.</p>
+        </div>
+    </div>
+
+    <div id="tiesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tiesModal')">&times;</span>
+            <h3>Ties</h3>
+            <p>Ties originated in the 17th century as part of military uniforms in Europe, eventually becoming a fashionable accessory in men's clothing. The modern necktie as we know it evolved in the 19th century.</p>
+        </div>
+    </div>
+
+    <div id="jeansModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('jeansModal')">&times;</span>
+            <h3>Jeans</h3>
+            <p>Jeans were invented in the 19th century as durable workwear. They became a symbol of rebellion in the 1950s and eventually transformed into a mainstream fashion staple.</p>
+        </div>
+    </div>
+
+    <div id="tunicsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tunicsModal')">&times;</span>
+            <h3>Tunics</h3>
+            <p>Tunics were a common form of clothing in ancient civilizations, particularly in Rome and Greece. They were simple, loose-fitting garments often worn by both men and women.</p>
+        </div>
+    </div>
+
+    <div id="cargoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cargoModal')">&times;</span>
+            <h3>Blue jeans, Cargos</h3>
+            <p>Cargo pants gained popularity in the 1990s with their functional design, including multiple large pockets. Blue jeans have been a staple since the late 1800s, originally designed as durable workwear.</p>
+        </div>
+    </div>
+
+    <div id="swimwearModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('swimwearModal')">&times;</span>
+            <h3>Swimwear</h3>
+            <p>Swimwear has evolved significantly, with the modern bikini being introduced in 1946 by French designer Louis Réard. It revolutionized women's swimwear fashion.</p>
+        </div>
+    </div>
+
+    <div id="blazerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('blazerModal')">&times;</span>
+            <h3>Men's Blazers</h3>
+            <p>Blazers originated in the 19th century, known for their bright, bold colors. They were initially worn by rowing clubs and became a staple of men's fashion.</p>
+        </div>
+    </div>
+
+    <div id="shirtsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('shirtsModal')">&times;</span>
+            <h3>T-shirts</h3>
+            <p>The modern T-shirt was introduced in the 1910s as a simple, comfortable garment for working men, later becoming popular as casual wear in the 1950s and beyond.</p>
+        </div>
+    </div>
+
+    <div id="hawaiianShirtsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('hawaiianShirtsModal')">&times;</span>
+            <h3>Hawaiian Shirts</h3>
+            <p>Hawaiian shirts became popular in the 1930s, made from light, breathable fabric, and are known for their tropical and vibrant designs.</p>
+        </div>
+    </div>
+
+    <div id="workoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('workoutModal')">&times;</span>
+            <h3>Workout Clothes (Stretchy)</h3>
+            <p>Workout clothes were first designed for physical exercise, but they later became a key part of fashion trends like athleisure, combining comfort and style.</p>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2024 History of Clothing Project</p>
     </footer>
 
-    <script src="timeline.js"></script> <!-- Link to  JavaScript file -->
+    <script src="timeline.js"></script> <!-- Link to JavaScript file -->
 </body>
 </html>
-

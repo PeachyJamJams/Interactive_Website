@@ -219,6 +219,11 @@ header p {
     display: inline-block; /* Ensure the button stays inline */
 }
 
+.more-info:hover {
+    background: #bd93f9; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
 .timeline-item.visible .more-info {
     display: block;
 }

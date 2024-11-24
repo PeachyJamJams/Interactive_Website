@@ -183,7 +183,9 @@ header p {
 
 .timeline-item img {
     max-width: 100%;
+    max-height: 100px;
     height: auto;
+    object-fit: contain;
     border-radius: 5px;
     margin: 20px auto;
     padding: 10px;

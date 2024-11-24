@@ -32,7 +32,7 @@ button.collapsible {
     font-size: 1rem; /* Standard readable font size */
     padding: 10px 20px; /* Comfortable padding */
     color: #230b4e; /* Light text color for contrast */
-    background: linear-gradient(135deg, #6272a4, #bd93f9); /* Gradient for a modern look */
+    background: linear-gradient(135deg, #000000, #ffffff); /* Gradient for a modern look */
     border: none; /* Remove border */
     border-radius: 8px; /* Smooth, rounded corners */
     cursor: pointer; /* Pointer cursor to indicate interactivity */
@@ -75,7 +75,7 @@ header {
     justify-content: space-between;
     padding: 10px 20px;
     background: #44475a;
-    color: #f8f8f2;
+    color: #000000;
     width: 100%;
     top: 0;
     left: 0;
@@ -106,7 +106,7 @@ header .nav-container a {
 }
 
 header .nav-container a:hover {
-    color: #bd93f9;
+    color: #000000;
 }
 
 header .title-container {
@@ -122,7 +122,7 @@ header h1 {
 header p {
     margin: 5px 0 0;
     font-size: 1rem;
-    color: #bd93f9;
+    color: #ffffff;
 }
 
 /* Timeline Container */
@@ -147,7 +147,7 @@ header p {
 }
 
 .timeline::-webkit-scrollbar-thumb {
-    background-color: #bd93f9;
+    background-color: #000000;
     border-radius: 10px;
 }
 
@@ -207,11 +207,11 @@ header p {
 }
 
 .timeline-item:nth-child(odd) {
-    background: #bd93f9;
+    background: #000000;
 }
 
 .timeline-item:nth-child(even) {
-    background: #6272a4;
+    background: #000000;
 }
 
 .timeline-item img {
@@ -305,7 +305,7 @@ header p {
 footer {
     text-align: center;
     padding: 20px;
-    background: #44475a;
+    background: #000000;
     color: #f8f8f2;
     font-size: 0.9rem;
     margin-top: 20px;

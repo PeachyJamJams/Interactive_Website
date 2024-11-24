@@ -101,6 +101,7 @@ header p {
     flex-wrap: nowrap;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    padding-top: 100px;
 }
 
 
@@ -271,7 +272,7 @@ footer {
     color: #f8f8f2;
     font-size: 0.9rem;
     margin-top: 20px;
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;

@@ -97,11 +97,13 @@ header p {
     overflow-x: auto; /* Ensures horizontal scrolling */
     gap: 20px;
     justify-content: center;
+    padding: 20px 0;
     align-items: flex-start;
     flex-wrap: nowrap;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 

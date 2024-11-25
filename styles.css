@@ -293,6 +293,8 @@ header p {
     justify-content: center;
     gap: 20px;
     margin: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 .team-member {
@@ -303,11 +305,15 @@ header p {
     background: white;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 .team-member img {
     width: 100%;
     border-radius: 50%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 .team-member a {
@@ -315,6 +321,8 @@ header p {
     margin-top: 10px;
     color: #007bff;
     text-decoration: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 .team-member a:hover {
@@ -335,6 +343,8 @@ footer {
     width: 100%;
     z-index: 1000;
     height: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 
 @media (max-width: 768px) {

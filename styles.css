@@ -299,6 +299,11 @@ header p {
 
 }
 
+.team p {
+    color: black;
+}
+
+
 .team-member {
     width: 300px;
     text-align: center;

@@ -303,6 +303,10 @@ header p {
     color: black;
 }
 
+.team h2 {
+    color: #000000;
+}
+
 
 .team-member {
     width: 300px;

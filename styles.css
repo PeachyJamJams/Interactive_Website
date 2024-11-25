@@ -184,7 +184,7 @@ header p {
     scroll-snap-align: center; /* Ensures each item snaps into place */
     will-change: transform;
     transform: scale(1);
-    overflow: hidden;
+    overflow: visible;
 }
 
 .timeline-item:hover,

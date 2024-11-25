@@ -2,6 +2,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const timelineItems = document.querySelectorAll('.timeline-item');
     const body = document.body;
 
+    // Add event listeners for mouse enter and mouse leave on all timeline items
+    timelineItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            // Enlarge the item on hover
+            item.classList.add('active');
+
+            // Change the background image of the body to match the item's data-background
+            const background = item.getAttribute('data-background');
+            if (background) {
+                body.style.backgroundImage = background;  // Set body background to the item's image
+            }
+        });
+
+        item.addEventListener('mouseleave', () => {
+            // Remove the enlargement on hover leave
+            item.classList.remove('active');
+
+            // Reset the background image when mouse leaves
+            body.style.backgroundImage = '';  // Remove background image
+        });
+    });
+
+    // Function to check visibility of timeline items and update the background if needed
     function checkVisibilityAndUpdateBackground() {
         let foundVisible = false;
         timelineItems.forEach(item => {
@@ -20,22 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (!foundVisible) {
-            body.style.backgroundImage = "url('default.jpg')";
+            body.style.backgroundImage = "url('default.jpg')";  // Reset to default image
         }
     }
 
     window.addEventListener('scroll', throttle(checkVisibilityAndUpdateBackground, 100));
     checkVisibilityAndUpdateBackground(); // Trigger on page load
-
-    // Add hover scaling effect on timeline items
-    timelineItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.classList.add('active'); // Enlarge the item on hover
-        });
-        item.addEventListener('mouseleave', () => {
-            item.classList.remove('active'); // Remove the enlargement on hover leave
-        });
-    });
 
     // Add event listeners to all collapsible buttons
     document.querySelectorAll('.collapsible').forEach(button => {
@@ -128,7 +141,6 @@ window.onclick = function(event) {
         }
     }
 };
-
 
 // Throttle function to limit the rate at which a function can fire
 function throttle(func, limit) {

@@ -228,6 +228,14 @@ header p {
     display: block;
 }
 
+.timeline-item .modal-trigger {
+    position: absolute; /* Position the button within the timeline item */
+    bottom: 20px; /* Adjust as necessary */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    z-index: 1; /* Ensure it stays on top */
+}
+
 .timeline-item[data-tooltip]:hover::after {
     content: attr(data-tooltip);
     position: absolute;

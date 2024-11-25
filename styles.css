@@ -368,7 +368,7 @@ footer {
     overflow-y: auto; /* Allows scrolling if the content is too tall */
     border-radius: 10px; /* Optional, for rounded corners */
 }
-}
+
 
 /* Modal content (the square part) */
 .modal-content {

@@ -10,59 +10,37 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    transition: background-image 1s ease-in-out;
+    transition: background-image 2s ease-in-out;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
 
+    .timeline-item {
+        transform: scale(1); /* No scaling on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    header {
+        padding: 10px 15px;
+        height: 80px; /* Reduce header height on smaller screens */
+    }
+
+    header h1 {
+        font-size: 20px; /* Slightly smaller text on mobile */
+    }
+}
 /* Initially hide the content */
 .content {
     max-height: 0; /* Hidden by default */
     overflow: hidden; /* Prevents overflowing text */
     transition: max-height 0.3s ease-out; /* Smooth toggle animation */
 }
-
-.collapsible.active + .content {
-    max-height: 500px; /* Enough space to display the content */
-}
-
-/* Stylish Collapsible Button */
-button.collapsible {
-    font-size: 1rem; /* Standard readable font size */
-    padding: 10px 20px; /* Comfortable padding */
-    color: #230b4e; /* Light text color for contrast */
-    background: linear-gradient(135deg, #000000, #ffffff); /* Gradient for a modern look */
-    border: none; /* Remove border */
-    border-radius: 8px; /* Smooth, rounded corners */
-    cursor: pointer; /* Pointer cursor to indicate interactivity */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add depth with shadow */
-    transition: all 0.3s ease; /* Smooth transitions for effects */
-    text-transform: capitalize; /* Optional: Capitalize text for consistency */
-    width: 100%; /* Full width button */
-    display: block; /* Forces new line below content */
-    margin: 12 auto;
-}
-
-/* Hover Effect */
-button.collapsible:hover {
-    background: linear-gradient(135deg, #000000, #000000); /* Reverse gradient on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-}
-
-/* Active State */
-button.collapsible:active {
-    transform: translateY(2px); /* "Pressed" effect */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dimmer shadow */
-}
-
-/* Focus for Accessibility */
-button.collapsible:focus {
-    outline: 2px solid #bd93f9; /* Visible focus indicator */
-    outline-offset: 2px;
-}
-
 
 html {
     scroll-behavior: smooth;
@@ -74,13 +52,13 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background: #000000;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb); ;
     color: #ffffff;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);;
     transition: transform 0.3s ease, opacity 0.3s ease;
     position: fixed;
     height: 100px;
@@ -114,9 +92,19 @@ header .title-container {
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
+header a:hover {
+    color: #ff4081; /* Change color on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+
+header h1, header a {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase; /* Give a modern feel to the text */
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.2s ease; /* Add transition for smooth hover effects */
 }
 
 header p {
@@ -317,18 +305,6 @@ footer {
     height: 100px;
 }
 
-@media (max-width: 768px) {
-    .timeline {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center;
-    }
-
-    .timeline-item {
-        transform: scale(1); /* No scaling on smaller screens */
-        margin-bottom: 20px;
-    }
-}
-
 .info-card {
     display: none; /* Hidden by default */
     position: fixed;
@@ -426,6 +402,3 @@ button.modal-trigger:active {
     transform: scale(1); /* Return to normal size when clicked */
 }
 
-body {
-    transition: background-image 0.5s ease-in-out; /* Smooth transition when changing background */
-}

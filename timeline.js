@@ -30,27 +30,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add hover scaling effect on timeline items
     timelineItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
-            item.classList.add('active');
+            item.classList.add('active'); // Enlarge the item on hover
         });
         item.addEventListener('mouseleave', () => {
-            item.classList.remove('active');
+            item.classList.remove('active'); // Remove the enlargement on hover leave
         });
     });
 
     // Add event listeners to all collapsible buttons
     document.querySelectorAll('.collapsible').forEach(button => {
-    button.addEventListener('click', () => {
-        // Toggle the 'active' class to show/hide the content
-        const content = button.nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null; // Hide content
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px"; // Show content
-        }
-        button.classList.toggle('active');
+        button.addEventListener('click', () => {
+            // Toggle the 'active' class to show/hide the content
+            const content = button.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null; // Hide content
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px"; // Show content
+            }
+            button.classList.toggle('active');
         });
     });
-
 
     // Function to show the central card with information
     function showCard(title, content) {
@@ -108,20 +107,15 @@ window.addEventListener('click', function (event) {
     });
 });
 
-
 // Function to open the modal
 function openModal(modalId) {
-    // Get the modal element by its ID
     const modal = document.getElementById(modalId);
-    // Show the modal by changing its display property
     modal.style.display = "block";
 }
 
 // Function to close the modal
 function closeModal(modalId) {
-    // Get the modal element by its ID
     const modal = document.getElementById(modalId);
-    // Hide the modal by changing its display property
     modal.style.display = "none";
 }
 

@@ -421,3 +421,6 @@ button.modal-trigger:active {
     transform: scale(1); /* Return to normal size when clicked */
 }
 
+body {
+    transition: background-image 0.5s ease-in-out; /* Smooth transition when changing background */
+}

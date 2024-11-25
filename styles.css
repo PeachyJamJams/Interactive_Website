@@ -365,19 +365,21 @@ footer {
     z-index: 1000;
 }
 
-/* Modal content box */
+/* Modal content (the square part) */
 .modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: #333; /* Dark background for the modal */
+    margin: auto; /* Center the modal */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    max-width: 80%;
-    overflow-y: auto;
+    border: 1px solid #888; /* Border for the modal */
+    width: 500px; /* Width of the modal */
+    height: 500px; /* Height of the modal (to make it square) */
+    box-sizing: border-box;
+    color: white; /* White text color */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 16px; /* Font size */
+    overflow-y: auto; /* Allow scrolling if content is too long */
 }
+
 
 /* Close button inside modal */
 .close {

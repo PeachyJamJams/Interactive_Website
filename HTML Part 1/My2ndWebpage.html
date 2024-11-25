@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<!-- Fig. 2.1: main.html -->
+<!-- First HTML5 example. -->
+<html lang="en">
+   <head>
+      <meta charset = "utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Welcome To My Webpage</title>
+      <link rel="stylesheet" href="My-Styles.css">
+   </head>
+
+   <body>
+
+      <!-- Immersive Photo Hero Section -->
+      <section id="hero">
+         <div class="hero-content">
+            <h1>Hello, I'm Jeremiah Todaro</h1>
+            <p>Cyber Security Specialist & Full Stack Developer</p>
+         </div>
+      </section>
+
+      <!-- Dark Mode Toggle Button -->
+      <button id="darkModeToggle" style="position: absolute; top: 20px; right: 20px;">Toggle Dark Mode</button>
+
+      
+
+      <!-- Main Content -->
+       <main>
+         
+         <section>
+            <p id="quoteDisplay" class="fade-in" style="font-style: italic; margin-top: 80px;"></p>
+         </section>
+
+         <section class="intro">
+            <h1>About Me</h1>
+            <p class="typewriter">
+               My name is Jeremiah (Jet) Todaro, and I like a challenge. Things that push me to my limits; physically, spiritually, emotionally. Whether it be a high level of difficulty hike, creating a business, or even a video game I enjoy challenges. Being a Computer Science major at UHD did come with a few challenges such as learning new ways of thinking which is required for some classes like discrete math. One common thing about all the challenges I attempt to conquer is that I enjoy them. I enjoy hiking, I enjoy coding, and I enjoy scaling my businesses. When it comes to pursuing goals in my life, I make sure I enjoy them. I switched my college major when I was a sophomore because I did not enjoy working at a pharmacy and therefore did not want to become a pharmacist. Do not get me wrong though, I do understand there will be things in life that I do not enjoy doing that will aid in success, such as chores. I do not personally enjoy making my bed or cleaning my bathroom or close, but I know discipline will help in keeping my mind, body, and spirit focused. Thank you.
+            </p>
+         </section>
+
+         <section class="intro">
+            <p>
+               Other Website I created <a href="https://clearwindowcleaningplus.com" class="custom-link" rel="stylesheet"> Here </a>
+            </p>
+         </section>
+
+         <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+              <input type="text" id="name" placeholder="Your Name" required />
+              <input type="email" id="email" placeholder="Your Email" required />
+              <textarea id="message" placeholder="Your Message" required></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </section>
+
+          <section id="skills">
+            <h2>Skills</h2>
+            <ul id="skillsList">
+              <li>JavaScript</li>
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>MongoDB</li>
+            </ul>
+          </section>
+
+         </main>
+
+<!--=======================JAVASCRIPT========================-->
+
+
+       <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            const paragraph = document.querySelector('.typewriter');
+            const text = paragraph.textContent;
+            let index = 0;
+            paragraph.textContent ='';
+
+            function typeWriter() {
+               if (index < text.length) {
+                  paragraph.textContent += text.charAt(index); // Add one letter at a time
+                  index++;
+                  setTimeout(typeWriter, 30); // Adjust typing speed (100ms = 0.1 second delay per letter)
+               } else {
+         // Remove the blinking cursor after the typing effect is done
+                  setTimeout(() => {
+                     paragraph.style.borderRight = 'none';
+                  }, 500); // Adjust if necessary
+               }
+            }
+            // Function to check if the paragraph is in the viewport
+            function checkVisibility() {
+               const rect = paragraph.getBoundingClientRect();
+               const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      
+               if (rect.top <= windowHeight - 100) {
+                  setTimeout(typeWriter, 500);
+                  window.removeEventListener('scroll', checkVisibility);
+               }
+            }
+            window.addEventListener('scroll' , checkVisibility);
+            checkVisibility();
+         });
+      </script>
+
+      <script>
+         const form = document.getElementById('contactForm');
+         form.addEventListener('submit', (event) => {
+           event.preventDefault();
+           alert('Message sent! Thank you for reaching out.');
+           form.reset();
+         });
+       </script>
+
+      <script>
+         // Add animation on page load
+         window.addEventListener('scroll', () => {
+         const skills = document.querySelectorAll('#skillsList li');
+         skills.forEach((skill, index) => {
+            setTimeout(() => {
+               skill.style.opacity = '1';
+               skill.style.transform = 'translateY(0)';
+            }, index * 200); // Delay each skill animation
+         });
+         });
+      </script>
+
+      <script>
+         // Add animation on page load for hero section
+         document.addEventListener('DOMContentLoaded', () => {
+            const heroContent = document.querySelector('.hero-content');
+            
+            // Using Intersection Observer to trigger animation when hero is in view
+            const observer = new IntersectionObserver(entries => {
+               entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                     heroContent.style.animation = 'fadeIn 2s ease-in-out forwards';
+                  }
+               });
+            });
+
+            // Observe the hero section
+            observer.observe(document.querySelector('#hero'));
+         });
+      </script>
+
+      <script>
+         const toggleButton = document.getElementById('darkModeToggle');
+         const body = document.body;
+
+         toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+         });
+      </script>
+
+      <script>
+         // Array of quotes
+         const quotes = [
+            "Let all that you do be done in love.",
+            "I can do everything through him who gives me strength.",
+            "Two are better than one, because they have a good return for their labor.",
+            "Fear of man will prove to be a snare, but whoever trusts in the Lord is kept safe.",
+            "Do something today that your future self will thank you for.",
+            "The only way to do great work is to love what you do."
+         ];
+
+         // Function to display a random quote
+         function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quoteDisplay = document.getElementById('quoteDisplay');
+
+            quoteDisplay.classList.remove('show'); 
+            quoteDisplay.classList.add('fade-out');
+
+            setTimeout(() => {
+               // Set the new quote
+               quoteDisplay.textContent = quotes[randomIndex];
+
+               // Fade in the new quote
+               quoteDisplay.classList.remove('fade-out'); // Remove fade-out class
+               quoteDisplay.classList.add('show'); // Trigger fade-in
+            }, 2000);
+         }
+
+         // Call the function on page load
+         window.addEventListener('load', displayRandomQuote);
+
+         // Call the function on page load
+         window.addEventListener('load', () => {
+            displayRandomQuote(); // Display the first quote immediately
+            setInterval(displayRandomQuote, 5000); // Change quote every 5 seconds
+         });
+
+
+      </script>
+
+
+   </body>
+</html>

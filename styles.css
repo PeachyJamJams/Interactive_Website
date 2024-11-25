@@ -101,12 +101,15 @@ header .nav-container {
 header .nav-container a {
     text-decoration: none;
     color: #f8f8f2;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: color 0.3s ease;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 header .nav-container a:hover {
     color: #000000;
+    font-style: italic;
+    font-stretch: expanded;
 }
 
 header .title-container {

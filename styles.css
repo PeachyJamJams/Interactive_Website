@@ -174,8 +174,8 @@ header p {
 
 /* Timeline Items */
 .timeline-item {
-    width: 250px; /* Width of each timeline item */
-    height: 300px;
+    width: 300px; /* Width of each timeline item */
+    height: 400px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0.7;
     background-color: #fff;
